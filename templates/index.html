@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holocure Blackjack Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Holocure Blackjack Strategy Calculator</h1>
+    <form method="POST">
+        <label for="dealer_aces">Multiplier:</label>
+        <input type="number" name="multiplier" required min="2" max="200" value="2"><br><br>
+
+        <label for="player_sum">Sum of Your Cards:</label>
+        <input type="number" name="player_sum" required min="4" max="20" value="12"><br><br>
+
+        <label for="player_aces">Number of Aces:</label>
+        <input type="number" name="player_aces" required min="0" max="9" value="0"><br><br>
+
+        <label for="dealer_sum">Sum of Dealer's Cards:</label>
+        <input type="number" name="dealer_sum" required min="4" max="20" value="12"><br><br>
+
+        <label for="dealer_aces">Number of Aces:</label>
+        <input type="number" name="dealer_aces" required min="0" max="2" value="0"><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    {% if error %}
+    <p style="color:red">{{ error }}</p>
+    {% endif %}
+
+</body>
+</html>
